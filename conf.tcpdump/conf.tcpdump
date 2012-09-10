@@ -1,0 +1,101 @@
+# src port
+regexp=\.[0-9a-z\-]+\s>
+colours=bold cyan
+======
+#dst port
+regexp=\.([0-9a-z\-]+):
+colours=bold cyan
+=======
+# ip number
+regexp=\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}
+colours=bold magenta
+=======
+# mac address
+regexp=\w\w:\w\w:\w\w:\w\w:\w\w:\w\w
+colours=bold magenta
+=======
+# misc IP info
+regexp=(\sflags\s|\slength:|tos\s|\sid\s)
+colours=magenta
+=======
+# tcp and ip flags
+regexp=(\sS\s|\sF\s|\sR\s|\sP\s|\sE\s|\sW\s|\sSE\s|\sPE\s|\sFE\s|\sSWE\s|\s\.\s|\sack\s|\surg\s|DF|none)
+colours=bold green
+=======
+# protocols
+regexp=(IPv4|IP|IPX|UDP|DHCP|BOOTP|NBT|arp|tcp|udp|icmp|icmp \d+:|bootp|SNMPv\d|snmp|SMB|domain|NTPv\d)
+colours=green
+=======
+# router stuff
+regexp=(CDPv1|CDPv2|802.1d|IGMP|cdp|igrp|stp)
+colours=bold green
+=======
+# ethernet encapsulation
+regexp=(sap|novell-ether|novell-fddi|snap|ethertype|NOV-ETHII|PPPoE|ether|DEC DNS|DEC DTS|MPLS|Loopback)
+colours=blue
+=======
+# sequence numbers
+regexp=((\d+):(\d+)\(\d+\)|\sseq\s)
+colours=cyan
+=======
+# options
+regexp=<.*>
+colours=yellow
+=======
+# window
+regexp=(\swin\s)
+colours=red
+=======
+# fragments
+regexp=(\[\+\]|offset\s\d+)
+colours=bold cyan
+=======
+# IPv6
+regexp=(ip6|icmp6)
+colours=blue
+=======
+# icmp
+regexp=(echo request|echo reply|source quench|router solicitation|time stamp request|time stamp reply|information request|address mask request|net.*unreachable|host.*unreachable|redirect|ip reassembly time exceeded|time exceeded|parameter problem|protocol.*unreachable|udp port.*unreachable|tcp port.*unreachable)
+colours=underline bold white
+=======
+# stuff to be aware of, but not necessarily bad
+regexp=(tos 0x2|tos 0x4|tos 0x8|win 0|Broadcast|mtu|ttl|update|Router|Switch|Transparent Bridge|RST|ServFail)
+colours=bold red
+=======
+# protocols not commonly used
+regexp=(ip\-proto\-\d+|igmp|ggp|ipencap|st2|cbt|egp|igp|bbn\-rcc|nvp|pup|argus|emcon|xnet|chaos|mux|dcn|hmp|prm|xns\-idp|trunk\-\d|leaf\-\d|rdp|irtp|iso\-tp4|netblt|mfe\-nsp|merit\-inp|sep|3pc|idpr|xtp|ddp|idpr\-cmtp|tp\+\+|sdrp|idrp|rsvp|gre|mhrp|bna|esp|ah|i\-hlsp|swipe|narp|mobile|tlsp|skip|cftp|sat\-expak|kryptolan|rvd|ippc|sat\-mon|visa|ipcv|cpnx|cphb|wsn|pvp|br\-sat\-mon|sun\-nd|wb\-mon|wb\-expak|iso\-ip|vmtp|secure\-vmtp|vines|ttp|nsfnet\-ipg|dgp|tcf|eigrp|ospf|sprite\-rpc|larp|mtp|ax\.25|ipip|micp|scc\-sp|etherip|encap|gmtp|ifmp|pnni|pim|aris|scps|qnx|a\/n|ipcomp|snp|compaq\-peer|ipx\-in\-ip|vrrp|pgm|l2tp|ddx|iatp|srp|uti|smp|ptp|isis|fire|crtp|crudp|sscopmce|iplt|sps|pipe|sctp|divert)
+colours=bold yellow
+=======
+# Link Layer Control protocols
+regexp=(NOV-802.2|NOV-802.3|LLC|llc\-snap|NetBeui|802.1B)
+colours=cyan
+=======
+# IPX
+regexp=(ipx\-ncp|ipx\-diags|ipx\-eigrp|ipx\-hwlink-dgm|ipx\-netbios|ipx\-sap\-nearest\-resp|ipx\-sap\-nearest\-req|ipx\-sap\-req|ipx\-sap\-resp|ipx\-sap|ipx\-rpi\-resp|ipx\-rip\-req|ipx\-rip|ipx)
+colours=green
+=======
+# errors
+regexp=(bad tcp cksum|bad udp cksum|bad hdr length|bogus|bad cksum|bad-len|no cksum|mismatch|bad udp chsum)
+colours=blink bold yellow
+=======
+# abnormal stuff
+regexp=(SFRP|SFP|SF|FP|\.0:|\.0\s>|RR|LSRR|WARNING|SessionReject|GetNextRequest|Access denied|SMBError|RRQ|\/etc\/passwd|Unknown packet type|address mask request|AXFR|Version.BIND|ttl   1|telnet|truncated\-ip.*bytes missing!|bad ptr (\d+))
+colours=bold yellow
+=======
+# we don't care about offsets of 0
+regexp=(offset 0,)
+colours=magenta
+=======
+# clean up from ugly regex matches
+regexp=(SMBnegprot|snap length|ERR|in\-addr\.arpa)
+colours=white
+=======
+# time
+regexp=\d\d:\d\d:\d\d\.\d{6}
+colours=yellow
+=======
+# My IP, modify as necessary
+regexp=192.168.1.100
+colours=bold yellow
+
+
