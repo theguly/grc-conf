@@ -1,0 +1,55 @@
+# cleanup
+regexp=\[error\]\ \d+\#\d+\:\ \*\d+\ NAXSI_EXLOG:
+replace=
+=======
+regexp=NAXSI_FMT
+skip=yes
+=======
+# server
+regexp=server=(.+?)\&
+replace=vhost: \1
+colours=blue
+count=once
+=======
+# ip number
+regexp=ip=(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})&
+replace=ip: \1
+colours=blue
+count=once
+=======
+# uri
+regexp=uri=(.+?)\&
+replace=uri: \1
+colours=green
+count=once
+=======
+# id
+regexp=id=(\d+)\&
+replace=id: \1
+colours=yellow
+count=once
+=======
+# zone
+regexp=zone=(\w+)\&
+replace=zone: \1
+colours=cyan
+count=once
+=======
+# var_name
+regexp=var_name=(\w+)\&
+replace=var: \1
+colours=yellow
+count=once
+=======
+# content
+regexp=content=(.*?),
+replace=content: \1
+colours=cyan
+count=once
+=======
+# request
+regexp=request:\ \"(\w+\ .*?)\
+replace=request: \1
+colours=cyan
+count=once
+=======
